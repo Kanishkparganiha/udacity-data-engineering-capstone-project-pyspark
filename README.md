@@ -43,40 +43,40 @@ The Star schema is chosen as the data model because of its easy of design and ef
 ### Staging Tables
 
 #### df_staging_i94
-id
-date
-city_code
-state_code
-age
-gender
-visa_type
-count
+    id
+    date
+    city_code
+    state_code
+    age
+    gender
+    visa_type
+    count
 
 #### df_tempurature_staging
-year
-month
-city_code
-city_name
-avg_tempurature
-lat
-log
+    year
+    month
+    city_code
+    city_name
+    avg_tempurature
+    lat
+    log
 
 
 #### staging_demo_df
-city_code
-state_code
-city_name
-median_age
-pct_male_pop
-pct_female_pop
-pct_veterans
-pct_foreign_born
-pct_native_american
-pct_asian
-pct_black
-pct_hispanic_or_latino
-pct_white
-total_pop
+    city_code
+    state_code
+    city_name
+    median_age
+    pct_male_pop
+    pct_female_pop
+    pct_veterans
+    pct_foreign_born
+    pct_native_american
+    pct_asian
+    pct_black
+    pct_hispanic_or_latino
+    pct_white
+    total_pop
 
 
 ### 3.2 Mapping Out Data Pipelines
@@ -107,6 +107,8 @@ if table_not_empty(df_immigrant) & table_not_empty(city_df) & table_not_empty(mo
 ### 4.2 Data dictionary
 Create a data dictionary for your data model. For each field, provide a brief description of what the data is and where it came from. You can include the data dictionary in the notebook or in a separate file.
 
+![schema](star_schema.png)
+
 #### Fact Table
 
 #### immigration_df
@@ -117,42 +119,42 @@ Create a data dictionary for your data model. For each field, provide a brief de
     count: count of immigrant's entries into the US
 
 #### Dimension Tables
-immigrant_df
-id: id of immigrant
-gender: gender of immigrant
-age: age of immigrant
-visa_type: immigrant's visa type
+#### immigrant_df
+    id: id of immigrant
+    gender: gender of immigrant
+    age: age of immigrant
+    visa_type: immigrant's visa type
 
 
 ####  monthly_city_temp_df
-city_code: city port code
-year: year
-month: month 
-avg_temperature: average temperature in city for given month
+    city_code: city port code
+    year: year
+    month: month 
+    avg_temperature: average temperature in city for given month
 
 #### city_df
-city_code: city port code
-state_code: state code of the city
-city_name: name of the city
-median_age: median age of the city
-pct_male_pop: city's male population in percentage
-pct_female_pop: city's female population in percentage
-pct_veterans: city's veteran population in percentage
-pct_foreign_born: city's foreign born population in percentage
-pct_native_american: city's native american population in percentage
-pct_asian: city's asian population in percentage
-pct_black: city's black population in percentage
-pct_hispanic_or_latino: city's hispanic or latino population in percentage
-pct_white: city's white population in percentage
-total_pop: city's total population
-lat: latitude of the city
-long: longitude of the city
+    city_code: city port code
+    state_code: state code of the city
+    city_name: name of the city
+    median_age: median age of the city
+    pct_male_pop: city's male population in percentage
+    pct_female_pop: city's female population in percentage
+    pct_veterans: city's veteran population in percentage
+    pct_foreign_born: city's foreign born population in percentage
+    pct_native_american: city's native american population in percentage
+    pct_asian: city's asian population in percentage
+    pct_black: city's black population in percentage
+    pct_hispanic_or_latino: city's hispanic or latino population in percentage
+    pct_white: city's white population in percentage
+    total_pop: city's total population
+    lat: latitude of the city
+    long: longitude of the city
 
 #### time_df
-date: date
-dayofweek: day of the week
-weekofyear: week of year
-month: month
+    date: date
+    dayofweek: day of the week
+    weekofyear: week of year
+    month: month
 ##### Step 5: Complete Project Write Up
 Pyspark is an interface for the Apache Spark in Python. It's not only allows you to write spark application using Python API. Pyspark support most of the spark's features such as Spark SQL, Dataframe, Streaming, MLib, and Spark Core. Pypark can read various different data types like csv,sas and parquet.
 
