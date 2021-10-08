@@ -96,13 +96,13 @@ Source/Count checks to ensure completeness
 Run Quality Checks
 
 #### Perform quality checks here
-def table_exists(df): if df is not None: return True else: return False
+    def table_exists(df): if df is not None: return True else: return False
 
-if table_exists(immigration_df) & table_exists(city_df) & table_exists(monthly_city_temp_df) & table_exists(time_df) & table_exists(immigration_df): print("data quality check passed") print("dimension tables and fact table exist") print() else: print("data quality check failed") print("table missing...")
+    if table_exists(immigration_df) & table_exists(city_df) & table_exists(monthly_city_temp_df) & table_exists(time_df) & table_exists(immigration_df): print("data quality check passed") print("dimension tables and fact table exist") print() else: print("data quality check failed") print("table missing...")
 
-def table_not_empty(df): return df.count() != 0
+    def table_not_empty(df): return df.count() != 0
 
-if table_not_empty(df_immigrant) & table_not_empty(city_df) & table_not_empty(monthly_city_temp_df) & table_not_empty(time_df) & table_not_empty(immigration_df): print("data quality check passed!") print("dimension tables and fact table contain records") print() else: print("data quality check failed!") print("null records...")
+    if table_not_empty(df_immigrant) & table_not_empty(city_df) & table_not_empty(monthly_city_temp_df) & table_not_empty(time_df) & table_not_empty(immigration_df): print("data quality check passed!") print("dimension tables and fact table contain records") print() else: print("data quality check failed!") print("null records...")
 
 ### 4.2 Data dictionary
 Create a data dictionary for your data model. For each field, provide a brief description of what the data is and where it came from. You can include the data dictionary in the notebook or in a separate file.
